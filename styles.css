@@ -1,0 +1,40 @@
+.display{
+    display:grid
+
+}
+.heading{
+    display: flex;
+    justify-content: space-around;
+}
+.cards{
+    display: grid;
+    grid-template-columns: auto;
+
+}
+th, td {
+    padding: 15px;
+  }
+.card {
+    border: 1px black solid;
+    width: 150px;
+}
+
+.hidden{
+    display: none;
+}
+
+.buttons{
+   display: none; justify-content: space-around;
+}
+/* 
+  let bookList=document.getElementById('booklist');
+    bookList.innerHTML="";
+    myLibrary.forEach((book)=>{
+
+        let row=document.createElement('tr');
+        row.innerHTML= `<td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.pages}</td>
+        <td>${book.read === 'read' ? 'Not read yet' : 'Read the Book'}</td>`
+        bookList.append(row);
+    }) */
