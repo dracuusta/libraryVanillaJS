@@ -37,8 +37,14 @@ function createCard(book, index){
         const pages=document.createElement('div');
         pages.innerText=book.pages;
 
-        const readState=document.createElement('div');
-        readState.innerText=book.read;
+        
+
+        const readDiv=document.createElement('button');
+        readDiv.innerText=book.read;
+        readDiv.setAttribute('data-index',index);
+        readDiv.addEventListener('click',(e)=>{
+            toggleReadDiv(readDiv);
+        })
 
         const removeBtn=document.createElement('button');
         removeBtn.innerText="Remove";
@@ -49,7 +55,7 @@ function createCard(book, index){
 
 
 
-        bookCard.append(title,author,pages,readState,removeBtn);
+        bookCard.append(title,author,pages,readDiv,removeBtn);
         cardGrids.append(bookCard);
         
 
@@ -69,7 +75,15 @@ function DisplayBooks(){
 }
 DisplayBooks();
 
-
+function toggleReadDiv(readDiv){
+    if(readDiv.innerText==='read')
+    {
+        readDiv.innerText='not read';
+    }
+    else{
+        readDiv.innerText='read';
+    }
+}
 
 const displayBtnDiv=document.querySelector('.display-btn');
 displayBtnDiv.addEventListener('click',(e)=>{
