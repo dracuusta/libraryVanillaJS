@@ -1,0 +1,19 @@
+{
+  "name": "libraryvanillajs",
+  "version": "1.0.0",
+  "description": "Fun project",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracuusta/libraryVanillaJS.git"
+  },
+  "author": "dracc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dracuusta/libraryVanillaJS/issues"
+  },
+  "homepage": "https://github.com/dracuusta/libraryVanillaJS#readme"
+}

@@ -37,14 +37,16 @@ function createCard(book, index){
         const pages=document.createElement('div');
         pages.innerText=book.pages;
 
-        
+        pages.style.marginBottom="10px";
 
         const readDiv=document.createElement('button');
-        readDiv.innerText=book.read;
+        readDiv.innerText="Read";
         readDiv.setAttribute('data-index',index);
         readDiv.addEventListener('click',(e)=>{
             toggleReadDiv(readDiv);
         })
+        readDiv.style.marginRight="24px";
+        readDiv.style.borderRadius="5%";
 
         const removeBtn=document.createElement('button');
         removeBtn.innerText="Remove";
@@ -52,7 +54,7 @@ function createCard(book, index){
         removeBtn.addEventListener('click',function(){
             removeDiv(parseInt(this.getAttribute('data-index')));
         });
-
+        removeBtn.style.borderRadius="5%";
 
 
         bookCard.append(title,author,pages,readDiv,removeBtn);
@@ -87,11 +89,14 @@ function toggleReadDiv(readDiv){
 
 const displayBtnDiv=document.querySelector('.display-btn');
 displayBtnDiv.addEventListener('click',(e)=>{
-    toggleAttributeForButtons();
+    const modal=document.querySelector('[data-modal]');
+    modal.showModal();
 });
 
-const submit=document.getElementById('submitBtn');
-submit.addEventListener('click',(e)=>{
+const form=document.querySelector('form');
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+
     const book=document.getElementById('book').value;
     const author=document.getElementById('author').value;
     const pages=document.getElementById('pages').value;
@@ -100,15 +105,11 @@ submit.addEventListener('click',(e)=>{
     const newBook=new Book(book,author,pages,read);
     myLibrary.push(newBook);
     DisplayBooks();
-});
+    const modal=document.querySelector('[data-modal]');
+    modal.close();
 
-function toggleAttributeForButtons(){
-    const buttons=document.getElementById('buttons');
-    if(buttons.style.display==='none')
-    {
-        buttons.style.display='flex';
-    }
-    else{
-        buttons.style.display='none';
-    }
-}
+})
+
+
+
+

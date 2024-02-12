@@ -14,13 +14,15 @@
     </head>
     <body>
         <button class="display-btn">Add Book</button>
-    <div id="buttons" class="buttons">
+    <dialog data-modal id="buttons" class="buttons">
+        <form>
         <input type="text" id="book" name="book" placeholder="Book Name"/>
         <input type="text" id="author" name="author" placeholder="Author" />
         <input type="text" id="pages" name="pages" placeholder="Pages"/>
         <input type="text" id="readState" name="readState" placeholder="Read State" />
-        <button id="submitBtn" style="margin-left:45vw; margin-top: 10px;">Submit</button>
-        </div>
+        <button type="submit" id="submitBtn" style="margin-left:45vw; margin-top: 10px;">Submit</button>
+    </form>
+</dialog>
     </div>
    
    
